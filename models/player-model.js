@@ -4,7 +4,7 @@ const db = require('../database/dbConfig');
 module.exports = {
   find,
   findById,
-  findFan,
+  // findFan,
   // update,
   // add,
   // remove
@@ -15,17 +15,17 @@ function find() {
     .select("*")
 }
 
-function findFan(fan_id) {
-  return db("fans")
-    .where({ fan_id })
-}
-
-function findById(player_id) {
+function findById(id) {
   return db("players")
-    .where({ player_id})
+    .where({ id })
 }
 
 // == Next Release - May need to update == //
+
+// function findFan(fan_id) {
+//   return db("fans")
+//     .where({ fan_id })
+// }
 
 // function update(player_id, changes) {
 //   return db("players")

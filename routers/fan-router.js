@@ -1,8 +1,8 @@
 // Router
-const fanRouter = require('express').Router();
+// const fanRouter = require('express').Router();
 
 // Model
-const Fans = require('../models/fan-model');
+// const Fans = require('../models/fan-model');
 
 // Middleware
 
