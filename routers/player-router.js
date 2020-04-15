@@ -13,16 +13,15 @@ const {
 
 // == ENDPOINTS == //
 
-// GET - /api/players/fan/:id
-// Gets all players saved by fan
-playerRouter.get('/fan/:id', validateFanId(), (req, res) => {
-  Players.findFan(req.params.id)
+// GET - /api/players
+playerRouter.get('/', (req, res) => {
+  Players.find()
     .then(players => {
-      res.status(200).json(players);
+      res.status(200).json(players)
     })
     .catch(err => {
       res.status(500).json({
-        message: "There was an error trying to retrieve the fan's players. Please try again later."
+        message: "There was an error retrieving all the players. Please try again later."
       })
     })
 })
@@ -36,6 +35,22 @@ playerRouter.get('/:id', validatePlayerId(), (req, res) => {
     .catch(err => {
       res.status(500).json({
         message: "There was an error trying to retrieve the player. Please try again later."
+      })
+    })
+})
+
+// == Next Release - May need to update == //
+
+// GET - /api/players/fan/:id
+// Gets all players saved by fan
+playerRouter.get('/fan/:id', validateFanId(), (req, res) => {
+  Players.findFan(req.params.id)
+    .then(players => {
+      res.status(200).json(players);
+    })
+    .catch(err => {
+      res.status(500).json({
+        message: "There was an error trying to retrieve the fan's players. Please try again later."
       })
     })
 })
