@@ -5,8 +5,7 @@ const cors = require('cors');
 
 // Routers
 const fanRouter = require('../routers/fan-router');
-const offensePlayerRouter = require('../routers/offensePlayer-router');
-const defensePlayerRouter = require('../routers/defensePlayer-router');
+const playerRouter = require('../routers/player-router');
 
 // Server
 const server = express();
@@ -18,8 +17,7 @@ server.use(cors());
 
 // Routes
 server.use('/api/fans', fanRouter);
-server.use('/api/offenseplayers', offensePlayerRouter);
-server.use('/api/defenseplayers', defensePlayerRouter);
+server.use('/api/players', playerRouter);
 
 // Root Endpoint
 server.get('/', (req, res) => {

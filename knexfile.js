@@ -14,6 +14,22 @@ const sqlite = {
   },
 };
 
+const postgres = {
+  client: "pg",
+  useNullAsDefault: true,
+  migrations: {
+    directory: "./database/migrations",
+  },
+  seeds: {
+    directory: "./database/seeds",
+  },
+  pool: {
+    afterCreate: (conn, done) => {
+      conn.run('PRAGMA foreign_keys = ON', done);
+    },
+  },
+}
+
 module.exports = {
   dev: {
     ...sqlite,
@@ -30,7 +46,7 @@ module.exports = {
   },
 
   production: {
-    ...sqlite,
+    ...postgres,
     connection: {
       filename: "./database/production.db3",
     },
