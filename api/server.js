@@ -4,7 +4,7 @@ const helmet = require('helmet');
 const cors = require('cors');
 
 // Routers
-const fanRouter = require('../routers/fan-router');
+// const fanRouter = require('../routers/fan-router');
 const playerRouter = require('../routers/player-router');
 
 // Server
@@ -16,7 +16,7 @@ server.use(express.json());
 server.use(cors());
 
 // Routes
-server.use('/api/fans', fanRouter);
+// server.use('/api/fans', fanRouter);
 server.use('/api/players', playerRouter);
 
 // Root Endpoint
