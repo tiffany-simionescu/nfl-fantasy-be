@@ -1,11 +1,11 @@
-// Database Configuration File
-const db = require('../database/dbConfig');
+// // Database Configuration File
+// const db = require('../database/dbConfig');
 
-module.exports = {
-  find,
-  findByFilter,
-  findById,
-  update,
-  add,
-  remove
-}
+// module.exports = {
+//   find,
+//   findByFilter,
+//   findById,
+//   update,
+//   add,
+//   remove
+// }
