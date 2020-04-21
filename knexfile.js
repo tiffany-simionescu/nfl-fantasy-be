@@ -48,11 +48,11 @@ module.exports = {
   production: {
     ...postgres,
     connection: {
-      host: process.env.HOST,
-      port: process.env.PORT,
-      user: process.env.USER,
-      password: process.env.PASSWORD,
-      database: process.env.DATABASE,
+      host: process.config.HOST,
+      port: process.config.PORT,
+      user: process.config.USER,
+      password: process.config.PASSWORD,
+      database: "./database/production.db3",
     },
   },
 };
