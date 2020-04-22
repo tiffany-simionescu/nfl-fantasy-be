@@ -53,11 +53,13 @@ module.exports = {
     useNullAsDefault: true,
   // connection: process.env.DATABASE_URL,
     connection: {
+      server: process.env.SERVER,
       port: process.env.PORT,
       host: process.env.HOST,
       database: process.env.DATABASE_URL,
       user: process.env.USER,
       password: process.env.PASSWORD,
+      ssl: true,
     },
   migrations: {
     directory: "./database/migrations",
