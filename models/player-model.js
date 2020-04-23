@@ -1,4 +1,6 @@
 // Database Configuration File
+require("dotenv").config();
+
 const db = require('../database/dbConfig');
 
 module.exports = {
@@ -11,8 +13,8 @@ module.exports = {
 }
 
 function find() {
-  return db("players")
-    .select("*")
+  return db(process.env.DATABASE)
+    .select("players")
 }
 
 function findById(id) {
