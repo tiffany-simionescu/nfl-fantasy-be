@@ -56,7 +56,7 @@ module.exports = {
       server: process.env.SERVER,
       port: process.env.PORT,
       host: process.env.HOST,
-      database: process.env.DATABASE_URL,
+      database: process.env.DATABASE,
       user: process.env.USER,
       password: process.env.PASSWORD,
       ssl: true,
