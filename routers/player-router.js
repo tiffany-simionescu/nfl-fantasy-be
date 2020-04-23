@@ -26,7 +26,7 @@ playerRouter.get('/', (req, res) => {
     })
     .catch(err => {
       res.status(500).json({
-        message: "There was an error retrieving all the players. Please try again later."
+        message: "1 There was an error retrieving all the players. Please try again later."
       })
     })
 })
