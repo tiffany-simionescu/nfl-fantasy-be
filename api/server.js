@@ -22,7 +22,7 @@ server.use('/api/players', playerRouter);
 // Root Endpoint
 server.get('/', (req, res) => {
   res.status(200).json({
-    message: "Welcome to the Tackle The Trade API!",
+    message: "Welcome to the Tackle My Trade API!",
   });
 });
 
