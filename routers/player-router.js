@@ -13,6 +13,11 @@ const {
 
 // == ENDPOINTS == //
 
+// TEST GET - /api/players/test
+playerRouter.get('/test', (req, res) => {
+  res.send("This is a test.");
+})
+
 // GET - /api/players
 playerRouter.get('/', (req, res) => {
   Players.find()
