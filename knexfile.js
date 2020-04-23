@@ -59,7 +59,7 @@ module.exports = {
       database: process.env.DATABASE,
       user: process.env.USER,
       password: process.env.PASSWORD,
-      ssl: true,
+      ssl: require,
     },
   migrations: {
     directory: "./database/migrations",
