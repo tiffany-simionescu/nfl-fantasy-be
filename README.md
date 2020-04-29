@@ -1,9 +1,3 @@
-🚫 Note: All lines that start with 🚫 are instructions and should be deleted before this is posted to your portfolio. This is intended to be a guideline. Feel free to add your own flare to it.
-
-🚫 The numbers 1️⃣ through 3️⃣ next to each item represent the week that part of the docs needs to be comepleted by.  Make sure to delete the numbers by the end of Labs.
-
-🚫 Each student has a required minimum number of meaningful PRs each week per the rubric.  Contributing to docs does NOT count as a PR to meet your weekly requirements.
-
 ## Contributors
 |                                       [Tiffany Simionescu](https://github.com/tiffany-simionescu)                                        |                                       [Joshua Doan](https://github.com/doanmade)                                        |                                       [Laura Theimer](https://github.com/lauralyeinc)                                        |
 | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | 
@@ -47,20 +41,16 @@ To get the server running locally:
 
 | Method | Endpoint                | Access Control | Description                                  |
 | ------ | ----------------------- | -------------- | -------------------------------------------- |
-| GET    | `/organizations/:orgId` | all users      | Returns the information for an organization. |
-| PUT    | `/organizatoins/:orgId` | owners         | Modify an existing organization.             |
-| DELETE | `/organizations/:orgId` | owners         | Delete an organization.                      |
+| GET    | `/api/players` | all fans      | Returns all the players and their information. |
+| GET    | `/api/players/:id` | all fans         | Returns the information for a single player            |
+| GET    | `/api/players/fan/:id` | owners         | Returns all saved players for a single Fan                      |
+| POST   | `/api/players` | owners         | Adds a player to a Fan's account                      |
+| PUT    | `/api/players/:id` | owners         | Moves a player to a new team in the Fan's account                      |
+| DELETE | `/api/players/:id` | owners         | Removes a player from a Fan's account                    |
 
 #### User Routes
 
-| Method | Endpoint                | Access Control      | Description                                        |
-| ------ | ----------------------- | ------------------- | -------------------------------------------------- |
-| GET    | `/users/current`        | all users           | Returns info for the logged in user.               |
-| GET    | `/users/org/:userId`    | owners, supervisors | Returns all users for an organization.             |
-| GET    | `/users/:userId`        | owners, supervisors | Returns info for a single user.                    |
-| POST   | `/users/register/owner` | none                | Creates a new user as owner of a new organization. |
-| PUT    | `/users/:userId`        | owners, supervisors |                                                    |
-| DELETE | `/users/:userId`        | owners, supervisors |                                                    |
+-    This portion will be updated in a future release
 
 # Data Model
 
