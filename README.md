@@ -37,7 +37,7 @@ To get the server running locally:
 
 ## 2️⃣ Endpoints
 
-#### Organization Routes
+#### Player Routes
 
 | Method | Endpoint                | Access Control | Description                                  |
 | ------ | ----------------------- | -------------- | -------------------------------------------- |
@@ -48,46 +48,66 @@ To get the server running locally:
 | PUT    | `/api/players/:id` | owners         | Moves a player to a new team in the Fan's account                      |
 | DELETE | `/api/players/:id` | owners         | Removes a player from a Fan's account                    |
 
-#### User Routes
+#### Fan Routes
 
--    This portion will be updated in a future release
+| Method | Endpoint                | Access Control | Description                                  |
+| ------ | ----------------------- | -------------- | -------------------------------------------- |
+| GET    | `/api/fans` | owners      | Returns all fans. |
+| GET    | `/api/fans/:id` | owners       | Returns a single Fan           |
+| POST   | `/api/fans/register` | all fans         | Registers a new Fan                      |
+| POST   | `/api/fans/login` | all fans         | Login for a Fan                      |
+| PUT    | `/api/fans/:id` | owners         | Updates a Fan's account                     |
+| DELETE | `/api/fans/:id` | owners         | Removes a Fan's account                    |
 
 # Data Model
 
-🚫This is just an example. Replace this with your data model
-
-#### 2️⃣ ORGANIZATIONS
+#### 2️⃣ PLAYERS
 
 ---
 
 ```
 {
   id: UUID
-  name: STRING
-  industry: STRING
-  paid: BOOLEAN
-  customer_id: STRING
-  subscription_id: STRING
+  playerID: STRING
+  playerFirst: STRING
+  playerLast: STRING
+  playerFull: STRING
+  position: STRING
+  startYear: INTEGER
+  currentTeam: STRING
+  height: INTEGER
+  weight: INTEGER
+  dob: DATE
+  forty: DECIMAL
+  bench: INTEGER
+  vertical: DECIMAL
+  broad: INTEGER
+  shuttle: DECIMAL
+  cone: DECIMAL
+  arm: DECIMAL
+  hand: DECIMAL
+  dpos: DECIMAL
+  col: STRING
+  dv: STRING
+  jnum: INTEGER
+  dcp: INTEGER
 }
 ```
 
-#### USERS
+#### FANS
 
 ---
 
 ```
 {
-  id: UUID
-  organization_id: UUID foreign key in ORGANIZATIONS table
+  fan_id: UUID
+  username: STRING
+  password: STRING
+  email: STRING
   first_name: STRING
   last_name: STRING
-  role: STRING [ 'owner', 'supervisor', 'employee' ]
-  email: STRING
-  phone: STRING
-  cal_visit: BOOLEAN
-  emp_visit: BOOLEAN
-  emailpref: BOOLEAN
-  phonepref: BOOLEAN
+  city: STRING
+  state: STRING
 }
 ```
 
