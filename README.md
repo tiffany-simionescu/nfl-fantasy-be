@@ -14,45 +14,34 @@
 <br>
 <br>
 
-🚫 4️⃣ Optional examples of using images with links for your tech stack, make sure to change these to fit your project
-
 ![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
-![React](https://img.shields.io/badge/react-v16.7.0--alpha.2-blue.svg)
-![Typescript](https://img.shields.io/npm/types/typescript.svg?style=flat)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b5c4db1c-b10d-42c3-b157-3746edd9e81d/deploy-status)](netlify link goes in these parenthesis)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![Maintainability](https://api.codeclimate.com/v1/badges/5f7dba5298cf7e9c49c4/maintainability)](https://codeclimate.com/github/Lambda-School-Labs/nfl-fantasy-be/maintainability)
-🚫 more info on using badges [here](https://github.com/badges/shields)
 
 
 
 # API Documentation
 
-#### 1️⃣ Backend delpoyed at [🚫name service here](🚫add URL here) <br>
+#### 1️⃣ Backend delpoyed at [Heroku](https://data.heroku.com/dataclips/rwhkccnmdgnbgemujsjivyshywlb) <br>
 
 ## 1️⃣ Getting started
 
 To get the server running locally:
 
-🚫 adjust these scripts to match your project
-
 - Clone this repo
-- **yarn install** to install all required dependencies
-- **yarn server** to start the local server
-- **yarn test** to start server using testing environment
+- **npm install** to install all required dependencies
+- **npm run server** to start the local server
+- **npm run test** to start server using testing environment
 
-### Backend framework goes here
+### Backend framework
 
-🚫 Why did you choose this framework?
-
--    Point One
--    Point Two
--    Point Three
--    Point Four
+-    PostgreSQL is much larger in size compared to Sqlite
+-    PostgreSQL supports almost every data type
+-    PostgreSQL has a larger storage capacity compared to Sqlite
+-    PostgreSQL can handle multiple users at once
+-    PostgreSQL was used for production
+-    Sqlite3 was used for testing and development
 
 ## 2️⃣ Endpoints
-
-🚫This is a placeholder, replace the endpoints, access controll, and descriptioin to match your project
 
 #### Organization Routes
 
