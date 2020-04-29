@@ -4,6 +4,28 @@
 
 🚫 Each student has a required minimum number of meaningful PRs each week per the rubric.  Contributing to docs does NOT count as a PR to meet your weekly requirements.
 
+## Contributors
+|                                       [Tiffany Simionescu](https://github.com/tiffany-simionescu)                                        |                                       [Joshua Doan](https://github.com/doanmade)                                        |                                       [Laura Theimer](https://github.com/lauralyeinc)                                        |
+| :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | 
+|                      [<img src="https://avatars3.githubusercontent.com/u/42684183?s=460&u=6350285357ccb2175cd8b98b2fbd951c27e35b89&v=4" width = "200" />](https://github.com/tiffany-simionescu)                       |                      [<img src="https://ca.slack-edge.com/ESZCHB482-W012JHQ0T2N-48b400e3487b-512" width = "200" />](https://github.com/doanmade)                       |                      [<img src="https://avatars1.githubusercontent.com/u/52268790?s=460&v=4" width = "200" />](https://github.com/lauralyeinc)                       |
+|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/tiffany-simionescu)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/doanmade)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/lauralyeinc)            |
+| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/tiffanysimionescu/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
+
+<br>
+<br>
+
+🚫 4️⃣ Optional examples of using images with links for your tech stack, make sure to change these to fit your project
+
+![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
+![React](https://img.shields.io/badge/react-v16.7.0--alpha.2-blue.svg)
+![Typescript](https://img.shields.io/npm/types/typescript.svg?style=flat)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b5c4db1c-b10d-42c3-b157-3746edd9e81d/deploy-status)](netlify link goes in these parenthesis)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![Maintainability](https://api.codeclimate.com/v1/badges/5f7dba5298cf7e9c49c4/maintainability)](https://codeclimate.com/github/Lambda-School-Labs/nfl-fantasy-be/maintainability)
+🚫 more info on using badges [here](https://github.com/badges/shields)
+
+
+
 # API Documentation
 
 #### 1️⃣ Backend delpoyed at [🚫name service here](🚫add URL here) <br>
