@@ -1,120 +1,127 @@
-🚫 Note: All lines that start with 🚫 are instructions and should be deleted before this is posted to your portfolio. This is intended to be a guideline. Feel free to add your own flare to it.
+## Contributors
+|                                       [Tiffany Simionescu](https://github.com/tiffany-simionescu)                                        |                                       [Joshua Doan](https://github.com/doanmade)                                        |                                       [Laura Theimer](https://github.com/lauralyeinc)                                        |
+| :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | 
+|                      [<img src="https://avatars3.githubusercontent.com/u/42684183?s=460&u=6350285357ccb2175cd8b98b2fbd951c27e35b89&v=4" width = "200" />](https://github.com/tiffany-simionescu)                       |                      [<img src="https://ca.slack-edge.com/ESZCHB482-W012JHQ0T2N-48b400e3487b-512" width = "200" />](https://github.com/doanmade)                       |                      [<img src="https://avatars1.githubusercontent.com/u/52268790?s=460&v=4" width = "200" />](https://github.com/lauralyeinc)                       |
+|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/tiffany-simionescu)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/doanmade)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/lauralyeinc)            |
+| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/tiffanysimionescu/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
 
-🚫 The numbers 1️⃣ through 3️⃣ next to each item represent the week that part of the docs needs to be comepleted by.  Make sure to delete the numbers by the end of Labs.
+<br>
+<br>
 
-🚫 Each student has a required minimum number of meaningful PRs each week per the rubric.  Contributing to docs does NOT count as a PR to meet your weekly requirements.
+![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
+[![Maintainability](https://api.codeclimate.com/v1/badges/5f7dba5298cf7e9c49c4/maintainability)](https://codeclimate.com/github/Lambda-School-Labs/nfl-fantasy-be/maintainability)
+
+
 
 # API Documentation
 
-#### 1️⃣ Backend delpoyed at [🚫name service here](🚫add URL here) <br>
+#### 1️⃣ Backend delpoyed at [Heroku](https://data.heroku.com/dataclips/rwhkccnmdgnbgemujsjivyshywlb) <br>
 
 ## 1️⃣ Getting started
 
 To get the server running locally:
 
-🚫 adjust these scripts to match your project
-
 - Clone this repo
-- **yarn install** to install all required dependencies
-- **yarn server** to start the local server
-- **yarn test** to start server using testing environment
+- **npm install** to install all required dependencies
+- **npm run server** to start the local server
+- **npm run test** to start server using testing environment
 
-### Backend framework goes here
+### Backend framework
 
-🚫 Why did you choose this framework?
-
--    Point One
--    Point Two
--    Point Three
--    Point Four
+-    PostgreSQL is much larger in size compared to Sqlite
+-    PostgreSQL supports almost every data type
+-    PostgreSQL has a larger storage capacity compared to Sqlite
+-    PostgreSQL can handle multiple users at once
+-    PostgreSQL was used for production
+-    Sqlite3 was used for testing and development
 
 ## 2️⃣ Endpoints
 
-🚫This is a placeholder, replace the endpoints, access controll, and descriptioin to match your project
-
-#### Organization Routes
+#### Player Routes
 
 | Method | Endpoint                | Access Control | Description                                  |
 | ------ | ----------------------- | -------------- | -------------------------------------------- |
-| GET    | `/organizations/:orgId` | all users      | Returns the information for an organization. |
-| PUT    | `/organizatoins/:orgId` | owners         | Modify an existing organization.             |
-| DELETE | `/organizations/:orgId` | owners         | Delete an organization.                      |
+| GET    | `/api/players` | all fans      | Returns all the players and their information. |
+| GET    | `/api/players/:id` | all fans         | Returns the information for a single player            |
+| GET    | `/api/players/fan/:id` | owners         | Returns all saved players for a single Fan                      |
+| POST   | `/api/players` | owners         | Adds a player to a Fan's account                      |
+| PUT    | `/api/players/:id` | owners         | Moves a player to a new team in the Fan's account                      |
+| DELETE | `/api/players/:id` | owners         | Removes a player from a Fan's account                    |
 
-#### User Routes
+#### Fan Routes
 
-| Method | Endpoint                | Access Control      | Description                                        |
-| ------ | ----------------------- | ------------------- | -------------------------------------------------- |
-| GET    | `/users/current`        | all users           | Returns info for the logged in user.               |
-| GET    | `/users/org/:userId`    | owners, supervisors | Returns all users for an organization.             |
-| GET    | `/users/:userId`        | owners, supervisors | Returns info for a single user.                    |
-| POST   | `/users/register/owner` | none                | Creates a new user as owner of a new organization. |
-| PUT    | `/users/:userId`        | owners, supervisors |                                                    |
-| DELETE | `/users/:userId`        | owners, supervisors |                                                    |
+| Method | Endpoint                | Access Control | Description                                  |
+| ------ | ----------------------- | -------------- | -------------------------------------------- |
+| GET    | `/api/fans` | owners      | Returns all fans. |
+| GET    | `/api/fans/:id` | owners       | Returns a single Fan           |
+| POST   | `/api/fans/register` | all fans         | Registers a new Fan                      |
+| POST   | `/api/fans/login` | all fans         | Login for a Fan                      |
+| PUT    | `/api/fans/:id` | owners         | Updates a Fan's account                     |
+| DELETE | `/api/fans/:id` | owners         | Removes a Fan's account                    |
 
 # Data Model
 
-🚫This is just an example. Replace this with your data model
-
-#### 2️⃣ ORGANIZATIONS
+#### 2️⃣ PLAYERS
 
 ---
 
 ```
 {
   id: UUID
-  name: STRING
-  industry: STRING
-  paid: BOOLEAN
-  customer_id: STRING
-  subscription_id: STRING
+  playerID: STRING
+  playerFirst: STRING
+  playerLast: STRING
+  playerFull: STRING
+  position: STRING
+  startYear: INTEGER
+  currentTeam: STRING
+  height: INTEGER
+  weight: INTEGER
+  dob: DATE
+  forty: DECIMAL
+  bench: INTEGER
+  vertical: DECIMAL
+  broad: INTEGER
+  shuttle: DECIMAL
+  cone: DECIMAL
+  arm: DECIMAL
+  hand: DECIMAL
+  dpos: DECIMAL
+  col: STRING
+  dv: STRING
+  jnum: INTEGER
+  dcp: INTEGER
 }
 ```
 
-#### USERS
+#### FANS
 
 ---
 
 ```
 {
-  id: UUID
-  organization_id: UUID foreign key in ORGANIZATIONS table
+  fan_id: UUID
+  username: STRING
+  password: STRING
+  email: STRING
   first_name: STRING
   last_name: STRING
-  role: STRING [ 'owner', 'supervisor', 'employee' ]
-  email: STRING
-  phone: STRING
-  cal_visit: BOOLEAN
-  emp_visit: BOOLEAN
-  emailpref: BOOLEAN
-  phonepref: BOOLEAN
+  city: STRING
+  state: STRING
 }
 ```
 
-## 2️⃣ Actions
+#  2️⃣ Actions
 
-🚫 This is an example, replace this with the actions that pertain to your backend
+#### PLAYERS
 
-`getOrgs()` -> Returns all organizations
+`find()` -> Returns all players
 
-`getOrg(orgId)` -> Returns a single organization by ID
-
-`addOrg(org)` -> Returns the created org
-
-`updateOrg(orgId)` -> Update an organization by ID
-
-`deleteOrg(orgId)` -> Delete an organization by ID
+`findById(id)` -> Returns a single player by ID
 <br>
 <br>
 <br>
-`getUsers(orgId)` -> if no param all users
 
-`getUser(userId)` -> Returns a single user by user ID
-
-`addUser(user object)` --> Creates a new user and returns that user. Also creates 7 availabilities defaulted to hours of operation for their organization.
-
-`updateUser(userId, changes object)` -> Updates a single user by ID.
-
-`deleteUser(userId)` -> deletes everything dependent on the user
 
 ## 3️⃣ Environment Variables
 

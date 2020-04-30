@@ -29,7 +29,7 @@ exports.seed = function (knex) {
           dv: "Atlantic Coast (ACC)",
           jnum: 4,
           dcp: 1,
-        },
+        }, 
         {
           playerID: "DB-0200",
           playerFirst: "Dan",

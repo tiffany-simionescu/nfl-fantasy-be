@@ -12,7 +12,7 @@ exports.seed = function (knex) {
           position: "WR",
           startYear: 2015,
           currentTeam: "PHI",
-          height: 72,
+          height: 72, 
           weight: 198,
           dob: "5/24/93",
           forty: 4.37,

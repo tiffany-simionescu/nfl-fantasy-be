@@ -988,7 +988,7 @@ exports.seed = function (knex) {
           startYear: 2017,
           currentTeam: "LAC",
           height: 76,
-          weight: 218,
+          weight: 218, 
           dob: "10/4/94",
           forty: 4.54,
           bench: 15,

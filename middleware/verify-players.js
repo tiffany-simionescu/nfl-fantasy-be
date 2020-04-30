@@ -4,7 +4,7 @@ module.exports = {
   validateFanId,
   validatePlayerId,
   validatePlayerPost,
-} 
+}  
 
 function validateFanId() {
   return (req, res, next) => {

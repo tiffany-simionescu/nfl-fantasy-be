@@ -1,7 +1,7 @@
 exports.seed = function (knex) {
   // Deletes ALL existing entries
   return knex("players")
-    .then(function () {
+    .then(function () { 
       // Inserts seed entries
       return knex("players").insert([
         {
