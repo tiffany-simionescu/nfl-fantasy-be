@@ -2,7 +2,7 @@
 const playerRouter = require('express').Router();
 
 // Model
-const Players = require('../models/player-model');
+const Players = require('../actions/player-actions');
 
 // Middleware
 const {

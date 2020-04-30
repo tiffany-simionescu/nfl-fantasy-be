@@ -1,4 +1,4 @@
-const Players = require('../models/player-model');
+const Players = require('../actions/player-actions');
 
 module.exports = {
   validateFanId,

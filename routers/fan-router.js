@@ -2,7 +2,7 @@
 // const fanRouter = require('express').Router();
 
 // Model
-// const Fans = require('../models/fan-model');
+// const Fans = require('../actions/fan-actions');
 
 // Middleware
 
