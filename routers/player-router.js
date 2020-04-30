@@ -2,7 +2,7 @@
 const playerRouter = require('express').Router();
 
 // Model
-const Players = require('../models/player-model');
+const Players = require('../actions/player-actions');
 
 // Middleware
 const {
@@ -13,6 +13,11 @@ const {
 
 // == ENDPOINTS == //
 
+// TEST GET - /api/players/test
+playerRouter.get('/test', (req, res) => {
+  res.send("This is a test.");
+})
+
 // GET - /api/players
 playerRouter.get('/', (req, res) => {
   Players.find()
@@ -21,7 +26,7 @@ playerRouter.get('/', (req, res) => {
     })
     .catch(err => {
       res.status(500).json({
-        message: "There was an error retrieving all the players. Please try again later."
+        message: "1 There was an error retrieving all the players. Please try again later."
       })
     })
 })
