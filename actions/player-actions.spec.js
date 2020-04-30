@@ -1,4 +1,4 @@
-const playerModel = require('./player-model');
+const playerModel = require('./player-actions');
 
 describe("player model", () => {
 
