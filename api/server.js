@@ -13,7 +13,12 @@ const server = express();
 // Middleware
 server.use(helmet());
 server.use(express.json());
-server.use(cors());
+// server.use(cors());
+server.use(cors({
+  'allowedHeaders': ['Content-Type'],
+  'origin': '*',
+  'preflightContinue': true
+}));
 
 // Routes
 // server.use('/api/fans', fanRouter);
