@@ -13,7 +13,13 @@ const server = express();
 // Middleware
 server.use(helmet());
 server.use(express.json());
-server.use(cors());
+// server.use(cors());
+server.use(cors({
+  'allowedHeaders': ['Content-Type'],
+  'origin': '*',
+  'preflightContinue': true,
+  // 'access-control-allow-origin': 'put development heroku link here, * wildcard bad idea, then set up for www.tacklemytrade.com, once we know it works. or http://localhost:3030'
+}));
 
 // Routes
 // server.use('/api/fans', fanRouter);
