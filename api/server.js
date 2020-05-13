@@ -18,7 +18,8 @@ server.use(cors({
   'allowedHeaders': ['Content-Type'],
   'origin': '*',
   'preflightContinue': true,
-  // 'access-control-allow-origin': 'put development heroku link here, * wildcard bad idea, then set up for www.tacklemytrade.com, once we know it works. or http://localhost:3030'
+  'access-control-allow-origin': 'http://localhost:3030' 
+  //put development heroku link here, * wildcard bad idea, then set up for www.tacklemytrade.com, once we know it works. in access-control-allow-origin 
 }));
 
 // Routes
