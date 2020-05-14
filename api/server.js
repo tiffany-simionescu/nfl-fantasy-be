@@ -16,7 +16,7 @@ server.use(express.json());
 // server.use(cors());
 server.use(cors({
   'allowedHeaders': ['Content-Type'],
-  'origin': '*',
+  // 'origin': '*',
   'preflightContinue': true,
   'Access-Control-Allow-Origin': 'http://localhost:3000' 
   //put development heroku link here, * wildcard bad idea, then set up for www.tacklemytrade.com, once we know it works. in access-control-allow-origin 
