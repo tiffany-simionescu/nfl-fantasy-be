@@ -18,7 +18,7 @@ server.use(cors({
   'allowedHeaders': ['Content-Type'],
   'origin': '*',
   'preflightContinue': true,
-  'access-control-allow-origin': 'http://localhost:3000' 
+  'Access-Control-Allow-Origin': 'http://localhost:3000' 
   //put development heroku link here, * wildcard bad idea, then set up for www.tacklemytrade.com, once we know it works. in access-control-allow-origin 
 }));
 
