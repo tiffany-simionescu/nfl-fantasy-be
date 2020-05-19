@@ -26,6 +26,9 @@ exports.up = async function(knex) {
     offensePlayers.string("state", 2)
       .notNullable()
 
+    // Create an array for players in Fan's account
+    // Max players = 17
+
   })
 };
 
