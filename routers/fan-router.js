@@ -1,14 +1,24 @@
 // Router
 const fanRouter = require('express').Router();
 
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const secrets = require('../config/secrets');
+
 // Model
 const Fans = require('../actions/fan-actions');
 
 // Middleware
-const {
-  validateFanId,
-  validateFanPost,
-} = require('../middleware/verify-fans');
+const { validateFanId } = require('../middleware/verify-fans');
+
+// Token Generator
+function generateToken(fan) {
+  return jwt.sign({
+    fanId: fan.fan_id,
+  }, secrets.jwtSecret, {
+    expiresIn: '1h',
+  })
+}
 
 // == ENDPOINTS == //
 
