@@ -5,6 +5,7 @@ const db = require('../database/dbConfig');
   find,
   findByFilter,
   findById,
+  findPlayerById,
   update,
   add,
   remove
@@ -25,4 +26,9 @@ function findByFilter(filter) {
 function findById(fan_id) {
   return db("fans")
     .where({ fan_id })
+}
+
+function findPlayerById(player_id) {
+  return db("players")
+    .where({ player_id })
 }

@@ -9,7 +9,10 @@ const secrets = require('../config/secrets');
 const Fans = require('../actions/fan-actions');
 
 // Middleware
-const { validateFanId } = require('../middleware/verify-fans');
+const { 
+  validateFanId, 
+  validatePlayerPost 
+} = require('../middleware/verify-fans');
 
 // Token Generator
 function generateToken(fan) {
@@ -94,6 +97,20 @@ fanRouter.post('/login', (req, res) => {
     })
 })
 
+// POST - /api/fans/player
+// Adds player to fan account
+fanRouter.post('/player', validatePlayerPost(), (req, res) => {
+  Fans.add(req.body)
+    .then(player => {
+      res.status(200).json(player)
+    })
+    .catch(err => {
+      res.status(500).json({
+        message: "There was an error trying to add the player to the fan's account. Please try again later."
+      })
+    })
+})
+
 // PUT - /api/fans/:id
 fanRouter.put('/:id', validateFanId(), (req, res) => {
   const changes = req.body;
@@ -105,6 +122,22 @@ fanRouter.put('/:id', validateFanId(), (req, res) => {
     .catch(err => {
       res.status(500).json({
         message: "There was an error while trying to update the Fan. Please try again later."
+      })
+    })
+})
+
+// DELETE - /api/players/:id
+// Removes player from fan account
+fanRouter.delete('/:id', validatePlayerId(), (req, res) => {
+  Fans.remove(req.params.id)
+    .then(() => {
+      res.status(200).json({
+        message: "The player was removed from the fan's account."
+      })
+    })
+    .catch(err => {
+      res.status(500).json({
+        message: "There was an error trying to remove the player from the fan's account. Please try again later."
       })
     })
 })
