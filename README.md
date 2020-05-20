@@ -48,7 +48,7 @@ To get the server running locally:
 | PUT    | `/api/players/:id` | owners         | Moves a player to a new team in the Fan's account                      |
 | DELETE | `/api/players/:id` | owners         | Removes a player from a Fan's account                    |
 
-#### Fan Routes
+#### Fan Routes - Available in a Future Release Canvas
 
 | Method | Endpoint                | Access Control | Description                                  |
 | ------ | ----------------------- | -------------- | -------------------------------------------- |
@@ -94,7 +94,7 @@ To get the server running locally:
 }
 ```
 
-#### FANS
+#### FANS - Available in a Future Release Canvas
 
 ---
 
@@ -117,10 +117,37 @@ To get the server running locally:
 
 `find()` -> Returns all players
 
-`findById(id)` -> Returns a single player by ID
+`findById(player_id)` -> Returns a single player by ID
+
+
+#### PLAYERS - Available in a Future Release Canvas 
+
+`findFan(fan_id)` -> Returns a Fan
+
+`update(player_id)` -> Updates a player in a Fan's account
+
+`add(player)` -> Adds a player to a Fan's account
+
+`remove(player_id)` -> Removes a player from a Fan's account
+
+
 <br>
 <br>
 <br>
+
+#### Fans - Available in a Future Release Canvas
+
+`find()` -> Returns all Fans
+
+`findByFilter(filter)` -> Returns a Fan by a specific filter
+
+`findById(fan_id)` -> Returns a Fan by Id
+
+`update(fan_id)` -> Updates a Fan
+
+`add(fan)` -> Adds a Fan
+
+`remove(fan)` -> Removes a Fan
 
 
 ## 3️⃣ Environment Variables
@@ -128,14 +155,14 @@ To get the server running locally:
 In order for the app to function correctly, the user must set up their own environment variables.
 
 create a .env file that includes the following:
-
-🚫 These are just examples, replace them with the specifics for your app
     
-    *  STAGING_DB - optional development db for using functionality not available in SQLite
-    *  NODE_ENV - set to "development" until ready for "production"
-    *  JWT_SECRET - you can generate this by using a python shell and running import random''.join([random.SystemRandom().choice('abcdefghijklmnopqrstuvwxyz0123456789!@#\$%^&amp;*(-*=+)') for i in range(50)])
-    *  SENDGRID_API_KEY - this is generated in your Sendgrid account
-    *  stripe_secret - this is generated in the Stripe dashboard
+    *  JWT_SECRET=you can generate this by using a python shell and running import random''.join([random.SystemRandom().choice('abcdefghijklmnopqrstuvwxyz0123456789!@#\$%^&amp;*(-*=+)') for i in range(50)])
+    *  USER=This is generated in the resource, Heroku PostgreSQL
+    *  PASSWORD=This is generated in the resource, Heroku PostgreSQL
+    *  DATABASE=This is generated in the resource, Heroku PostgreSQL
+    *  PORT=5432
+    *  HOST=This is generated in the resource, Heroku PostgreSQL
+    *  SERVER="Production"
     
 ## Contributing
 
@@ -175,5 +202,4 @@ These contribution guidelines have been adapted from [this good-Contributing.md-
 
 ## Documentation
 
-See [Frontend Documentation](🚫link to your frontend readme here) for details on the fronend of our project.
-🚫 Add DS iOS and/or Andriod links here if applicable.
+See [Frontend Documentation](https://github.com/Lambda-School-Labs/nfl-fantasy-fe/blob/master/README.md) for details on the fronend of our project.
