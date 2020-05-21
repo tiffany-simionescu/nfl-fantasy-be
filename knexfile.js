@@ -29,10 +29,10 @@ dev: {
       database: 'todos_test'
   },
   migrations: {
-      directory: __dirname + '/database/migrations',
+      directory: '/database/migrations',
   },
   seeds: {
-      directory: __dirname + '/database/seeds',
+      directory: '/database/seeds',
   },
 },
 
@@ -69,11 +69,11 @@ dev: {
     //   ssl: require,
     // },
   migrations: {
-    directory: __dirname + "./database/migrations",
+    directory: "./database/migrations",
     // tableName: "knex_migrations",
   },
   seeds: {
-    directory: __dirname + "./database/seeds"
+    directory: "./database/seeds"
   },
   pool: {
     min: 2,
