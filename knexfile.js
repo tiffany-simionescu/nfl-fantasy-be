@@ -1,6 +1,6 @@
 require("dotenv").config();
 
-module.exports = {
+module.exports = {  
 
 //   dev: {
 //     client: 'sqlite3',
