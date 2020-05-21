@@ -1,7 +1,7 @@
 require("dotenv").config();
 
 module.exports = { 
-
+ 
 //   dev: {
 //     client: 'sqlite3',
 //     useNullAsDefault: true,
