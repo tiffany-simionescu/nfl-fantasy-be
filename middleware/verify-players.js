@@ -53,33 +53,23 @@ function validatePlayerPost() {
     if (!req.body.username) {
       return res.status(400).json({
         message: "Please provide a username."
-      })
-    } else if (!req.body.password) {
+      })} else if (!req.body.password) {
       return res.status(400).json({
         message: "Please provide a password."
-      })
-    } else if (!req.body.email) {
+      })} else if (!req.body.email) {
       return res.status(400).json({
         message: "Please provide an email."
-      })
-    } else if (!req.body.first_name) {
+      })} else if (!req.body.first_name) {
       return res.status(400).json({
         message: "Please provide a first name."
-      })
-    } else if (!req.body.last_name) {
+      })} else if (!req.body.last_name) {
       return res.status(400).json({
         message: "Please provide a last name."
-      })
-    } else if (!req.body.city) {
+      })} else if (!req.body.city) {
       return res.status(400).json({
         message: "Please provide a city."
-      })
-    } else if (!req.body.state) {
+      })} else if (!req.body.state) {
       return res.status(400).json({
         message: "Please provide a state."
-      })
-    } else {
-      next();
-    }
-  }
-}
+      })} else { next(); }
+    }}
