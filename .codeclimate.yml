@@ -8,7 +8,7 @@ exclude_patterns:
 - "database/seeds/007players.js"
 - "database/seeds/008players.js"
 - "database/seeds/009players.js"
-- "database/seeds/010players.js"
+- "database/seeds/010Players.js"
 - "database/seeds/011players.js"
 - "database/seeds/012players.js"
 - "database/seeds/013players.js"
