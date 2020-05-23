@@ -11,6 +11,8 @@ const {
   validatePlayerPost,
 } = require('../middleware/verify-players');
 
+
+
 // == ENDPOINTS == //
 
 // TEST GET - /api/players/test
@@ -21,8 +23,8 @@ playerRouter.get('/test', (req, res) => {
 // GET - /api/players
 playerRouter.get('/', (req, res) => {
   Players.find()
-    .then(players => {
-      res.status(200).json(players)
+    .then(allPlayers => {
+      res.status(200).json(allPlayers)
     })
     .catch(err => {
       res.status(500).json({ 
@@ -50,8 +52,8 @@ playerRouter.get('/:id', validatePlayerId(), (req, res) => {
 // Gets all players saved by fan
 playerRouter.get('/fan/:id', validateFanId(), (req, res) => {
   Players.findFan(req.params.id)
-    .then(players => {
-      res.status(200).json(players);
+    .then(fanPlayers => {
+      res.status(200).json(fanPlayers);
     })
     .catch(err => {
       res.status(500).json({
