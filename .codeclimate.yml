@@ -15,3 +15,5 @@ exclude_patterns:
 - "database/seeds/014players.js"
 - "database/seeds/015players.js"
 - "database/seeds/016players.js"
+- "database/migrations/20200413224226_players.js"
+- "database/migrations/20200410222338_fans.js"
