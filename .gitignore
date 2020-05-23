@@ -78,6 +78,3 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
-
-# Seed Files for Maintainability
-database/seeds/
