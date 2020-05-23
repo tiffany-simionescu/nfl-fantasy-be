@@ -8,7 +8,7 @@ const Players = require('../actions/player-actions');
 const {
   validateFanId,
   validatePlayerId,
-  validatePlayerPost,
+  // validatePlayerPost,
 } = require('../middleware/verify-players');
 
 
@@ -46,8 +46,6 @@ playerRouter.get('/:id', validatePlayerId(), (req, res) => {
     })
 })
 
-// == Next Release - May need to update == //
-
 // GET - /api/players/fan/:id
 // Gets all players saved by fan
 playerRouter.get('/fan/:id', validateFanId(), (req, res) => {
@@ -62,37 +60,39 @@ playerRouter.get('/fan/:id', validateFanId(), (req, res) => {
     })
 })
 
+// == Will be taken care of in fan-router -- //
 // POST - /api/players
 // Adds player to fan account
-playerRouter.post('/', validatePlayerPost(), (req, res) => {
-  Players.add(req.body)
-    .then(player => {
-      res.status(200).json(player)
-    })
-    .catch(err => {
-      res.status(500).json({
-        message: "There was an error trying to add the player to the fan's account. Please try again later."
-      })
-    })
-})
+// playerRouter.post('/', validatePlayerPost(), (req, res) => {
+//   Players.add(req.body)
+//     .then(player => {
+//       res.status(201).json(player)
+//     })
+//     .catch(err => {
+//       res.status(500).json({
+//         message: "There was an error trying to add the player to the fan's account. Please try again later."
+//       })
+//     })
+// })
 
+// -- Future Release Ability, may need to update later -- //
 // PUT - /api/players/:id
 // To move player to a new team
-playerRouter.put('/:id', validatePlayerId(), (req, res) => {
-  const changes = req.body;
+// playerRouter.put('/:id', validatePlayerId(), (req, res) => {
+//   const changes = req.body;
 
-  Players.update(req.params.id, changes)
-    .then(player => {
-      res.status(200).json(player)
-    })
-    .catch(err => {
-      res.status(500).json({
-        message: "There was an error trying to update the player. Please try again later."
-      })
-    })
-})
+//   Players.update(req.params.id, changes)
+//     .then(player => {
+//       res.status(200).json(player)
+//     })
+//     .catch(err => {
+//       res.status(500).json({
+//         message: "There was an error trying to update the player. Please try again later."
+//       })
+//     })
+// })
 
-// DELETE - /api/players/:id
+// DELETE - /api/players/:id/
 // Removes player from fan account
 playerRouter.delete('/:id', validatePlayerId(), (req, res) => {
   Players.remove(req.params.id)
