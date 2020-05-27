@@ -10,6 +10,8 @@ const {
   validatePlayerId
 } = require('../middleware/verify-players');
 
+
+
 // == ENDPOINTS == //
 
 // TEST GET - /api/players/test
@@ -20,12 +22,12 @@ playerRouter.get('/test', (req, res) => {
 // GET - /api/players
 playerRouter.get('/', (req, res) => {
   Players.find()
-    .then(players => {
-      res.status(200).json(players)
+    .then(allPlayers => {
+      res.status(200).json(allPlayers)
     })
     .catch(err => {
-      res.status(500).json({
-        message: "1 There was an error retrieving all the players. Please try again later."
+      res.status(500).json({ 
+        message: "There was an error retrieving all the players. Please try again later."
       })
     })
 })
@@ -43,19 +45,15 @@ playerRouter.get('/:id', validatePlayerId(), (req, res) => {
     })
 })
 
-// == Next Release - May need to update == //
-
 // GET - /api/players/fan/:id
 // Gets all players saved by fan
 playerRouter.get('/fan/:id', validateFanId(), (req, res) => {
   Players.findFan(req.params.id)
-    .then(players => {
-      res.status(200).json(players);
+    .then(fanPlayers => {
+      res.json(fanPlayers);
     })
     .catch(err => {
-      res.status(500).json({
-        message: "There was an error trying to retrieve the fan's players. Please try again later."
-      })
+      res.json(err)
     })
 })
 
