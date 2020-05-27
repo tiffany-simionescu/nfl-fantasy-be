@@ -2,39 +2,39 @@ require("dotenv").config();
 
 module.exports = { 
  
-//   dev: {
-//     client: 'sqlite3',
-//     useNullAsDefault: true,
-//     connection: {
-//       filename: './database/dev.db3'
-//     },
-//     migrations: {
-//       directory: './database/migrations',
-//     },
-//     seeds: {
-//       directory: './database/seeds',
-//     },
-//     pool: {
-//       afterCreate: (conn, done) => {
-//         conn.run('PRAGMA foreign_keys = ON', done);
-//       },
-//   },
-// },
-dev: {
-  client: 'pg',
-  connection: {
-      host: '127.0.0.1',
-      user: process.env.TODO_DB_USER,
-      password: process.env.TODO_DB_PW,
-      database: 'todos_test'
-  },
-  migrations: {
-      directory: '/database/migrations',
-  },
-  seeds: {
-      directory: '/database/seeds',
+  dev: {
+    client: 'sqlite3',
+    useNullAsDefault: true,
+    connection: {
+      filename: './database/dev.db3'
+    },
+    migrations: {
+      directory: './database/migrations',
+    },
+    seeds: {
+      directory: './database/seeds',
+    },
+    pool: {
+      afterCreate: (conn, done) => {
+        conn.run('PRAGMA foreign_keys = ON', done);
+      },
   },
 },
+// dev: {
+//   client: 'pg',
+//   connection: {
+//       host: '127.0.0.1',
+//       user: process.env.TODO_DB_USER,
+//       password: process.env.TODO_DB_PW,
+//       database: 'todos_test'
+//   },
+//   migrations: {
+//       directory: '/database/migrations',
+//   },
+//   seeds: {
+//       directory: '/database/seeds',
+//   },
+// },
 
   test: {
     client: 'sqlite3',
