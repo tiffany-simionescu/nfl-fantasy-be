@@ -7,8 +7,7 @@ const Players = require('../actions/player-actions');
 // Middleware
 const {
   validateFanId,
-  validatePlayerId,
-  validatePlayerPost,
+  validatePlayerId
 } = require('../middleware/verify-players');
 
 // == ENDPOINTS == //
@@ -60,20 +59,6 @@ playerRouter.get('/fan/:id', validateFanId(), (req, res) => {
     })
 })
 
-// POST - /api/players
-// // Adds player to fan account
-// playerRouter.post('/', validatePlayerPost(), (req, res) => {
-//   Players.add(req.body)
-//     .then(player => {
-//       res.status(200).json(player)
-//     })
-//     .catch(err => {
-//       res.status(500).json({
-//         message: "There was an error trying to add the player to the fan's account. Please try again later."
-//       })
-//     })
-// })
-
 // --- FUTURE RELEASE --- //
 // // PUT - /api/players/:id
 // // To move player to a new team
@@ -87,22 +72,6 @@ playerRouter.get('/fan/:id', validateFanId(), (req, res) => {
 //     .catch(err => {
 //       res.status(500).json({
 //         message: "There was an error trying to update the player. Please try again later."
-//       })
-//     })
-// })
-
-// // DELETE - /api/players/:id
-// // Removes player from fan account
-// playerRouter.delete('/:id', validatePlayerId(), (req, res) => {
-//   Players.remove(req.params.id)
-//     .then(() => {
-//       res.status(200).json({
-//         message: "The player was removed from the fan's account."
-//       })
-//     })
-//     .catch(err => {
-//       res.status(500).json({
-//         message: "There was an error trying to remove the player from the fan's account. Please try again later."
 //       })
 //     })
 // })
