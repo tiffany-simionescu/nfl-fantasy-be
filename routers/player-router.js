@@ -5,10 +5,7 @@ const playerRouter = require('express').Router();
 const Players = require('../actions/player-actions');
 
 // Middleware
-const {
-  validateFanId,
-  validatePlayerId
-} = require('../middleware/verify-players');
+const { validatePlayerId } = require('../middleware/verify-players');
 
 
 
@@ -45,18 +42,6 @@ playerRouter.get('/:id', validatePlayerId(), (req, res) => {
     })
 })
 
-// GET - /api/players/fan/:id
-// Gets all players saved by fan
-playerRouter.get('/fan/:id', validateFanId(), (req, res) => {
-  Players.findFan(req.params.id)
-    .then(fanPlayers => {
-      res.json(fanPlayers);
-    })
-    .catch(err => {
-      res.json(err)
-    })
-})
-
 // --- FUTURE RELEASE --- //
 // // PUT - /api/players/:id
 // // To move player to a new team
@@ -71,6 +56,18 @@ playerRouter.get('/fan/:id', validateFanId(), (req, res) => {
 //       res.status(500).json({
 //         message: "There was an error trying to update the player. Please try again later."
 //       })
+//     })
+// })
+
+// // GET - /api/players/fan/:id
+// // Gets all players saved by fan
+// playerRouter.get('/fan/:id', validateFanId(), (req, res) => {
+//   Players.findFan(req.params.id)
+//     .then(fanPlayers => {
+//       res.json(fanPlayers);
+//     })
+//     .catch(err => {
+//       res.json(err)
 //     })
 // })
 
