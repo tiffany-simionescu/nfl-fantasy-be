@@ -1,29 +1,29 @@
 exports.up = async function(knex) {
-  await knex.schema.createTable("fans", offensePlayers => {
+  await knex.schema.createTable("fans", fans => {
 
-    offensePlayers.increments("fan_id")
+    fans.increments("fan_id")
 
-    offensePlayers.string("username", 50)
+    fans.string("username", 50)
       .notNullable()
       .unique()
 
-    offensePlayers.string("password", 50)
+    fans.string("password", 50)
       .notNullable()
 
-    offensePlayers.string("email", 128)
+    fans.string("email", 128)
       .notNullable()
       .unique()
 
-    offensePlayers.string("first_name", 128)
+    fans.string("first_name", 128)
       .notNullable()
 
-    offensePlayers.string("last_name", 128)
+    fans.string("last_name", 128)
       .notNullable()
 
-    offensePlayers.string("city", 128)
+    fans.string("city", 128)
       .notNullable()
 
-    offensePlayers.string("state", 2)
+    fans.string("state", 2)
       .notNullable()
 
   })
