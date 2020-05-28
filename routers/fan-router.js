@@ -9,10 +9,7 @@ const secrets = require('../config/secrets');
 const Fans = require('../actions/fan-actions');
 
 // Middleware
-const { 
-  validateFanId, 
-  validatePlayerPost 
-} = require('../middleware/verify-fans');
+const { validateFanId } = require('../middleware/verify-fans');
 
 // Token Generator
 function generateToken(fan) {
@@ -117,42 +114,10 @@ fanRouter.put('/:id', validateFanId(), (req, res) => {
     })
 })
 
-// == May need to update == //
-// POST - /api/fans/:id/players
-// Adds player to fan account
-fanRouter.post('/:id/players', validatePlayerPost(), (req, res) => {
-  Fans.addPlayer(req.body)
-    .then(player => {
-      res.status(200).json(player)
-    })
-    .catch(err => {
-      res.status(500).json({
-        message: "There was an error trying to add the player to the fan's account. Please try again later."
-      })
-    })
-})
-
-// == May need to update == //
-// DELETE - /api/fans/:id/players/:id
-// Removes player from fan account
-fanRouter.delete('/:id/players/:id',validateFanId(), validatePlayerId(), (req, res) => {
-  Fans.removePlayer(req.params.id)
-    .then(() => {
-      res.status(200).json({
-        message: "The player was removed from the fan's account."
-      })
-    })
-    .catch(err => {
-      res.status(500).json({
-        message: "There was an error trying to remove the player from the fan's account. Please try again later."
-      })
-    })
-})
-
 // DELETE - /api/fans/:id
 // Removes a Fan's account
 fanRouter.delete('/:id', validateFanId(), (req, res) => {
-  Fan.removeFan(req.params.id)
+  Fan.remove(req.params.id)
     .then(() => {
       res.status(200).json({
         message: "Fan was removed successfully."
@@ -164,3 +129,40 @@ fanRouter.delete('/:id', validateFanId(), (req, res) => {
       })
     })
 })
+
+module.exports = fanRouter;
+
+
+
+// == POSSIBLE FUTURE RELEASE ENDPOINTS == //
+
+// // POST - /api/fans/:id/players
+// // Adds player to fan account
+// fanRouter.post('/:id/players', validatePlayerPost(), (req, res) => {
+//   Fans.addPlayer(req.body)
+//     .then(player => {
+//       res.status(200).json(player)
+//     })
+//     .catch(err => {
+//       res.status(500).json({
+//         message: "There was an error trying to add the player to the fan's account. Please try again later."
+//       })
+//     })
+// })
+
+// // == May need to update == //
+// // DELETE - /api/fans/:id/players/:id
+// // Removes player from fan account
+// fanRouter.delete('/:id/players/:id',validateFanId(), validatePlayerId(), (req, res) => {
+//   Fans.removePlayer(req.params.id)
+//     .then(() => {
+//       res.status(200).json({
+//         message: "The player was removed from the fan's account."
+//       })
+//     })
+//     .catch(err => {
+//       res.status(500).json({
+//         message: "There was an error trying to remove the player from the fan's account. Please try again later."
+//       })
+//     })
+// })
