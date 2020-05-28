@@ -6,13 +6,13 @@ exports.seed = function (knex) {
       // Inserts seed entries
       return knex("fans").insert([
         {
-          username: 'tiffany87',
-          password: '123456',
-          email: 'tiffany@email.com',
-          first_name: 'Tiffany',
-          last_name: 'Simionescu',
-          city: 'Greenville',
-          state: 'SC'
+          username: "tiffany87",
+          password: "123456",
+          email: "tiffany@email.com",
+          first_name: "Tiffany",
+          last_name: "Simionescu",
+          city: "Greenville",
+          state: "SC"
         }
       ])
     })

@@ -56,7 +56,7 @@ fanRouter.post('/register', (req, res) => {
   let hash = bcrypt.hashSync(newFan.password, 10);
   newFan.password = hash;
 
-  Fan.add(newFan)
+  Fans.add(newFan)
     .then(saved => {
       res.status(201).json({
         message: `Welcome ${saved.first_name}!`
@@ -75,7 +75,7 @@ fanRouter.post('/register', (req, res) => {
 fanRouter.post('/login', (req, res) => {
   let { username, password } = req.body;
 
-  Fan.findByFilter({ username }) 
+  Fans.findByFilter({ username }) 
     .then(fan => {
       if (fan && bcrypt.compareSync(password, fan.password)) {
         const token = generateToken(fan);
@@ -103,7 +103,7 @@ fanRouter.post('/login', (req, res) => {
 fanRouter.put('/:id', validateFanId(), (req, res) => {
   const changes = req.body;
 
-  Fan.update(req.params.id, changes)
+  Fans.update(req.params.id, changes)
     .then(fan => {
       res.status(200).json(fan)
     })
@@ -117,7 +117,7 @@ fanRouter.put('/:id', validateFanId(), (req, res) => {
 // DELETE - /api/fans/:id
 // Removes a Fan's account
 fanRouter.delete('/:id', validateFanId(), (req, res) => {
-  Fan.remove(req.params.id)
+  Fans.remove(req.params.id)
     .then(() => {
       res.status(200).json({
         message: "Fan was removed successfully."
