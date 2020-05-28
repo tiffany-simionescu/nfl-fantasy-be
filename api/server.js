@@ -4,7 +4,7 @@ const helmet = require('helmet');
 const cors = require('cors');
 
 // Routers
-// const fanRouter = require('../routers/fan-router');
+const fanRouter = require('../routers/fan-router');
 const playerRouter = require('../routers/player-router');
 
 // Server
@@ -16,14 +16,14 @@ server.use(express.json());
 // server.use(cors());
 server.use(cors({
   'allowedHeaders': ['Content-Type'],
-  'origin': '*',
+  // 'origin': '*',
   'preflightContinue': true,
-  'access-control-allow-origin': 'http://localhost:3030' 
+  'Access-Control-Allow-Origin': '*'  
   //put development heroku link here, * wildcard bad idea, then set up for www.tacklemytrade.com, once we know it works. in access-control-allow-origin 
 }));
 
 // Routes
-// server.use('/api/fans', fanRouter);
+server.use('/api/fans', fanRouter);
 server.use('/api/players', playerRouter);
 
 // Root Endpoint

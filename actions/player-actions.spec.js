@@ -1,14 +1,14 @@
-const playerModel = require('./player-actions');
+const playerActions = require('./player-actions');
 
 describe("player model", () => {
 
   test("find", async () => {
-    const res = await playerModel.find();
+    const res = await playerActions.find();
     expect(res.length).toBeGreaterThan(600);
   })
 
   test("findById", async () => {
-    const res = await playerModel.findById(1);
+    const res = await playerActions.findById(1);
     expect(res).toEqual([{
       "arm": 0, "bench": 0, "broad": 111, 
       "col": "Miami (FL)", "cone": 0, 
