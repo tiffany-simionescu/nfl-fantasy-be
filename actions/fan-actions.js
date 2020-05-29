@@ -26,6 +26,7 @@ function findByFilter(filter) {
 function findById(fan_id) {
   return db("fans")
     .where({ fan_id })
+    .first();
 }
 
 async function add(fan) {
