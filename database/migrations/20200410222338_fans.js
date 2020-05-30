@@ -3,24 +3,24 @@ exports.up = async function(knex) {
 
     fans.increments("fan_id")
 
-    fans.string("username", 50)
+    fans.string("username")
       .notNullable()
       .unique()
 
-    fans.string("password", 50)
+    fans.string("password")
       .notNullable()
 
-    fans.string("email", 128)
+    fans.string("email")
       .notNullable()
       .unique()
 
-    fans.string("first_name", 128)
+    fans.string("first_name")
       .notNullable()
 
-    fans.string("last_name", 128)
+    fans.string("last_name")
       .notNullable()
 
-    fans.string("city", 128)
+    fans.string("city")
       .notNullable()
 
     fans.string("state", 2)
