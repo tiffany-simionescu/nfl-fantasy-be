@@ -27,7 +27,7 @@ function generateToken(fan) {
 fanRouter.get('/', (req, res) => {
   Fans.find()
     .then(fans => {
-    res.json(fans)
+    res.json(fans) 
   })
   .catch(err => {
     res.status(500).json({
