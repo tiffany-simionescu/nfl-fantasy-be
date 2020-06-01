@@ -41,7 +41,7 @@ fanRouter.get('/', (req, res) => {
 fanRouter.get('/:id', validateFanId(), (req, res) => {
   Fans.findById(req.params.id)
     .then(fan => {
-      res.status(200).json(fan)
+      res.json(fan)
     })
     .catch(err => {
       res.status(500).json({
