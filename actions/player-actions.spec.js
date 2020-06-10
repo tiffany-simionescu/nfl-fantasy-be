@@ -1,6 +1,6 @@
 const playerActions = require('./player-actions');
 
-describe("player model", () => {
+describe("player actions", () => {
 
   test("find", async () => {
     const res = await playerActions.find();
