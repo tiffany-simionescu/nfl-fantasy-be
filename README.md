@@ -32,8 +32,8 @@ To get the server running locally:
 -    PostgreSQL supports almost every data type
 -    PostgreSQL has a larger storage capacity compared to Sqlite
 -    PostgreSQL can handle multiple users at once
--    PostgreSQL was used for production
--    Sqlite3 was used for testing and development
+-    PostgreSQL was used for production and development
+-    Sqlite3 was used for testing
 
 ## 2️⃣ Endpoints
 
@@ -43,12 +43,8 @@ To get the server running locally:
 | ------ | ----------------------- | -------------- | -------------------------------------------- |
 | GET    | `/api/players` | all fans      | Returns all the players and their information. |
 | GET    | `/api/players/:id` | all fans         | Returns the information for a single player            |
-| GET    | `/api/players/fan/:id` | owners         | Returns all saved players for a single Fan                      |
-| POST   | `/api/players` | owners         | Adds a player to a Fan's account                      |
-| PUT    | `/api/players/:id` | owners         | Moves a player to a new team in the Fan's account                      |
-| DELETE | `/api/players/:id` | owners         | Removes a player from a Fan's account                    |
 
-#### Fan Routes - Available in a Future Release Canvas
+#### Fan Routes
 
 | Method | Endpoint                | Access Control | Description                                  |
 | ------ | ----------------------- | -------------- | -------------------------------------------- |
@@ -94,7 +90,7 @@ To get the server running locally:
 }
 ```
 
-#### FANS - Available in a Future Release Canvas
+#### FANS
 
 ---
 
@@ -119,35 +115,22 @@ To get the server running locally:
 
 `findById(player_id)` -> Returns a single player by ID
 
-
-#### PLAYERS - Available in a Future Release Canvas 
-
-`findFan(fan_id)` -> Returns a Fan
-
-`update(player_id)` -> Updates a player in a Fan's account
-
-`add(player)` -> Adds a player to a Fan's account
-
-`remove(player_id)` -> Removes a player from a Fan's account
+`findById(player_id)` -> Returns a single player by ID
 
 
-<br>
-<br>
-<br>
-
-#### Fans - Available in a Future Release Canvas
+#### FANS
 
 `find()` -> Returns all Fans
 
-`findByFilter(filter)` -> Returns a Fan by a specific filter
+`findById(fan_id)` -> Returns a single Fan by ID
 
-`findById(fan_id)` -> Returns a Fan by Id
+`findByFilter(filter)` -> Returns a single Fan by a specified filter
 
-`update(fan_id)` -> Updates a Fan
+`update(fan_id, changes)` -> Updates a Fan's account
 
-`add(fan)` -> Adds a Fan
+`add(fan)` -> Adds a new Fan account
 
-`remove(fan)` -> Removes a Fan
+`remove(fan_id)` -> Removes a Fan's account
 
 
 ## 3️⃣ Environment Variables
