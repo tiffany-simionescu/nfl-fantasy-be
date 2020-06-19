@@ -83,6 +83,7 @@ fanRouter.post('/login', (req, res) => {
 
         res.status(200).json({
           message: `Welcome ${fan.first_name}!`,
+          username: `${fan.username}`,
           authToken: token,
         })
       } else {
