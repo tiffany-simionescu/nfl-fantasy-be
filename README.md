@@ -55,9 +55,9 @@ To get the server running locally:
 | PUT    | `/api/fans/:id` | owners         | Updates a Fan's account                     |
 | DELETE | `/api/fans/:id` | owners         | Removes a Fan's account                    |
 
-# Data Model
+## Data Model
 
-#### 2️⃣ PLAYERS
+#### PLAYERS
 
 ---
 
@@ -107,7 +107,7 @@ To get the server running locally:
 }
 ```
 
-#  2️⃣ Actions
+## Actions
 
 #### PLAYERS
 
