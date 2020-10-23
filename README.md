@@ -15,7 +15,7 @@
 
 # API Documentation
 
-#### 1️⃣ Backend delpoyed at [Heroku](https://data.heroku.com/dataclips/rwhkccnmdgnbgemujsjivyshywlb) <br>
+#### 1️⃣ Backend delpoyed at [Heroku](https://tacklemytrade-api.herokuapp.com/) <br>
  [Trello](https://trello.com/b/GR22EAEc/nfl-fantasy-perfect-trade) <br>
  [Notion](https://www.notion.so/NFL-Fantasy-Perfect-Trade-881bd44def114fda8cffd8ccc362caf0) <br>
  
